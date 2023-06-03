@@ -1,0 +1,17 @@
+{% extends './base.html' %} {% block title %}Home Page{% endblock %} 
+{% load static %}
+{% block content %}
+    {% for competition in competitions %}
+        <h1>{{competition.title}}</h1>
+        
+        {% for submission in submissions %}
+            {% if submission.competition == competition %}
+                <h4>{{submission.user}}</h4>
+                <h4>{{submission.project_desc}}</h4>
+                <h4>{{submission.video}}</h4>
+            {% endif %}
+        {% endfor %}
+       
+    {% endfor %}
+    
+{% endblock %}

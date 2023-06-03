@@ -1,0 +1,58 @@
+{% extends './base.html' %} {% block title %}Home Page{% endblock %} 
+{% load static %}
+{% block content %}
+<div class = "cards">
+{% for competition in competitions %}
+
+<div class="comp-card"> 
+    <h3 class="comp-card-title">{{competition.title}}</h3>
+    <p class="comp-card-desc">{{competition.description}}</p>
+    {% if perms.main.delete_competition %}
+    <form method="post">
+        {% csrf_token %}
+        <button
+          type="submit"
+          class="create"          name="competition-id"
+          value="{{competition.id}}"
+        >
+          Delete
+        </button>
+      </form>
+      
+    {% endif %}
+
+        {% for item in join_list %}
+          {% if item.0 == competition.title %}
+            {% if item.1 %}
+            <h1 class="noti">Joined</h1>   
+              
+            {% else %}
+             
+              <button
+
+                class="create"
+                name="competition-id"
+                value="{{competition.id}}"
+                onclick = "location.href = '/join'"
+              >
+                Create Submission
+              </button> 
+            
+          {% endif %}   
+                
+          {% endif %}
+          {% empty %}
+          <button
+
+          class="create"              name="competition-id"
+              value="{{competition.id}}"
+              onclick = "location.href = '/join'"
+            >
+              Create Submission
+            </button>   
+        {% endfor %}
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

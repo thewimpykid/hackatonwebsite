@@ -1,0 +1,68 @@
+{% extends './base.html' %} {% block title %}Home Page{% endblock %} 
+{% load static %}
+{% block content %}
+    <div class="home-image-container">
+        <div class="image-container-left">
+            <h1 class="image-container-text">Problem Solving</h1>
+            <h1 class="image-container-text image-container-text-bottom ">For Kids</h1>
+            <a class="image-container-button">Join The Competition</a>
+            <a class="image-container-button ">Learn More</a>
+        </div>
+        <div class="image-container-right">
+            <img src="{% static 'img/3peoplehome.png' %}" width="700px">
+        </div>
+    </div>
+    <!-- <hr> -->
+    <div class="home-about-container">
+        <div class="left-about">
+            <h1>About Junior Visionaries</h1>
+            <p>Junior Visionaries is a problem solving competition aimed at kids in grades K-8, which makes children solve a given problem over a 2 month lifespan, developing and enhancing their problem solving, critical thinking, and time management skills</p>
+            <a class="home-about-button">Contact Us</a>
+        </div>  
+        <div class="right-about">
+            <div class="step-container">
+                <h1>1. Registration</h1>
+                <img class="register-image" src="{% static 'img/registerform.png' %}" width=200px>
+            </div>
+            <div class="step-container">
+                <h1>2. Competition</h1>
+                <img class="register-image" src="{% static 'img/competition.png' %}" width=200px>
+            </div>
+            <div class="step-container">
+                <h1>3. Judging</h1>
+                <img class="register-image" src="{% static 'img/judging.png' %}" width=200px>  
+            </div>
+        </div>  
+
+        
+    </div>
+
+    <div class="evaluation-process">
+        <h1 class="eval-title">Evaluation Process</h1>
+        <div class="eval-steps">
+            <div class="evaluation-step-container">
+                <h1 class="eval-title-small">1. Problem</h1>
+                <img class="eval-image" src="{% static 'img/problem.png' %}" width=200px>
+            </div>
+            <div class="evaluation-step-container">
+                <h1 class="eval-title-small">2. Clear Research</h1>
+                <img class="eval-image" src="{% static 'img/research.png' %}" width=200px>
+            </div>
+            <div class="evaluation-step-container">
+                <h1 class="eval-title-small">3. Brainstorming</h1>
+                <img class="eval-image" src="{% static 'img/brainstorming.png' %}" width=200px>  
+            </div>
+            <div class="evaluation-step-container">
+                <h1 class="eval-title-small">4. Solution</h1>
+                <img class="eval-image" src="{% static 'img/solution.png' %}" width=200px>  
+            </div>
+            <div class="evaluation-step-container">
+                <h1 class="eval-title-small">5. Future Goals</h1>
+                <img class="eval-image" src="{% static 'img/target.png' %}" width=200px>  
+            </div>
+        </div>
+        
+    </div>
+   
+    
+{% endblock %}
